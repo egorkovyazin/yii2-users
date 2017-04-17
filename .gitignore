@@ -1,0 +1,10 @@
+# IDEs: phpstorm, netbeans, eclipse
+.idea
+nbproject
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache, Mac DS_Store Files
+Thumbs.db
+.DS_Store

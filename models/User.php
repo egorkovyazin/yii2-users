@@ -265,7 +265,7 @@ class User extends ActiveRecord implements IdentityInterface
         return \Yii::$app->mailer->compose(['html' => $view . '-html', 'text' => $view . '-text'], ['user' => $this, 'token' => $this->emailConfirmToken])
             ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name . ' robot'])
             ->setTo($this->emailConfirmToken->{$toAttribute})
-            ->setSubject('Email confirmation for ' . \Yii::$app->name)
+            ->setSubject(\Yii::t('users', 'EMAIL_CONFIRM_SUBJECT', ['username' => \Yii::$app->name]))
             ->send();
     }
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Message translations.
  *
@@ -24,7 +25,7 @@ return [
     'CHANGE_EMAIL' => 'Change e-mail',
     'CHANGE_PASSWORD' => 'Change password',
     'CHANGES_WERE_SAVED' => 'Changes were saved successfully',
-    'CHECK_YOU_EMAIL_FOR_FURTHER_INSTRUCTION' => 'Check your email for further instructions',
+    'CHECK_YOUR_EMAIL_FOR_FURTHER_INSTRUCTION' => 'Check your email for further instructions',
     'CHILDREN' => 'Children',
     'CHILDREN_FOR' => 'Children for "{name}"',
     'CHOOSE_ITEMS' => 'Choose items',
@@ -33,7 +34,7 @@ return [
     'CREATE' => 'Create',
     'CREATE_USER' => 'Create user',
     'CREATE_MODEL' => 'Create {type}',
-	'CREATED_AT' => 'Created at',
+    'CREATED_AT' => 'Created at',
     'EMAIL' => 'E-mail',
     'EMAIL_CONFIRMATION' => 'E-mail confirmation',
     'EMAIL_OR_USERNAME' => 'E-mail or username',
@@ -95,7 +96,7 @@ return [
     'SEX_MALE' => 'Male',
     'SEX_FEMALE' => 'Female',
     'SIGNUP' => 'Signup',
-	'STATUS' => 'Status',
+    'STATUS' => 'Status',
     'STATUS_NEW' => 'New',
     'STATUS_ACTIVE' => 'Active',
     'STATUS_BLOCKED' => 'Blocked',
@@ -112,7 +113,7 @@ return [
     'TO_YOURS_EMAILS_WERE_SEND_MESSAGES_WITH_CONFIRMATIONS' => 'On your old and new e-mail addresses sent confirmation messages',
     'UPDATE' => 'Изменить',
     'UPDATE_MODEL' => 'Изменить элемент "{name}" с типом "{type}"',
-	'UPDATED_AT' => 'Updated at',
+    'UPDATED_AT' => 'Updated at',
     'UPDATE_USER' => 'Update user "{username}"',
     'USERNAME' => 'Username',
     'USERS' => 'Users',
@@ -120,5 +121,6 @@ return [
     'USER_PERMISSIONS' => 'User permissions',
     'VIA_SOCIAL_NETWORKS' => 'Via social networks...',
     'YOU_CAN_ENTER_VIA_SOCIAL_NETWORKS' => 'You can enter via social network',
-    'YOU_CAN_RESET_PASSWORD' => 'If you forgot your password you can <a href="{url}">reset it</a>'
+    'YOU_CAN_RESET_PASSWORD' => 'If you forgot your password you can <a href="{url}">reset it</a>',
+    'EMAIL_CONFIRM_SUBJECT' => 'Email confirmation for {username}',
 ];
