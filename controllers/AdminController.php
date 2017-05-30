@@ -104,13 +104,37 @@ class AdminController extends Controller
     {
         $model = new User();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->status = ($model->status == User::STATUS_NEW) ? User::STATUS_ACTIVE: $model->status;
+
+            $password = substr(str_shuffle(uniqid()), 0, 10);
+            $model->setPassword($password);
+            $model->generateAuthKey();
+
+            if ($model->save()) {
+                $this->sendEmailCreatedUser($model, $password);
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * Notify the user that his account was created.
+     * @param User $user
+     * @param string $password
+     */
+    protected function sendEmailCreatedUser(User $user, $password)
+    {
+        $view = Yii::$app->controller->module->getCustomMailView('createdUser');
+        return Yii::$app->mailer->compose(['html' => $view . '-html', 'text' => $view . '-text'], ['user' => $user, 'password' => $password])
+            ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name])
+            ->setTo($user->email)
+            ->setSubject(Yii::t('users', 'EMAIL_CREATED_USER', ['username' => Yii::$app->name]))
+            ->send();
     }
 
     /**
